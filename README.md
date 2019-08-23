@@ -1,2 +1,2 @@
-# fronApp
+# front app
 Personal Framework
