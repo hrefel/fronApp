@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "root": "",
@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "showCircularDependencies": false,
             "outputPath": "dist/frontApp",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,10 +26,22 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.sass"
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "src/theme.less",
+              "src/styles.scss",
+              {
+                "input": "src/theme-material.scss"
+              }
             ],
             "scripts": []
           },
@@ -88,7 +101,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "src/styles.scss",
+              {
+                "input": "src/theme-material.scss"
+              }
             ],
             "scripts": []
           }
@@ -119,6 +138,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "frontApp"
 }

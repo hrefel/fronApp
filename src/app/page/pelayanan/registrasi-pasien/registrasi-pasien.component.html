@@ -1,0 +1,173 @@
+<div class="ui-g">
+    <div class="ui-g-6">
+        <mat-card>
+            <mat-card-title>
+                <h1>Demografi</h1>
+            </mat-card-title>
+            <div class="ui-g">
+                <div class="ui-md-8">
+                    <mat-form-field style="width: 100%">
+                        <input matInput placeholder="Nama Pasien">
+                    </mat-form-field>
+                </div>
+                <div class="ui-md-4">
+                    <mat-form-field>
+                        <mat-label>Jenis Kelamin</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let jk of listJenisKelamin"
+                                [value]="jk.name">
+                                {{jk.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="ui-md-4">
+                    <mat-form-field>
+                        <input matInput placeholder="Tempat Lahir">
+                    </mat-form-field>
+                </div>
+                <div class="ui-md-4">
+                    <mat-form-field style="width: 93.5%">
+                        <input matInput [matDatepicker]="picker"
+                            placeholder="Tanggal Lahir">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="ui-md-4">
+                    <mat-form-field>
+                        <mat-label>Agama</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let data of listAgama"
+                                [value]="data">
+                                {{data.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="ui-md-4">
+                    <mat-form-field>
+                        <mat-label>Status Perkawinan</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let data of
+                                listStatusPerkawinan" [value]="data">
+                                {{data.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="ui-md-4">
+                    <mat-form-field>
+                        <mat-label>Pendidikan</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let data of listPendidikan"
+                                [value]="data">
+                                {{data.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="ui-md-4">
+                    <mat-form-field>
+                        <mat-label>Pekerjaan</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let data of listPekerjaan"
+                                [value]="data">
+                                {{data.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="ui-md-4">
+                    <mat-form-field>
+                        <mat-label>Kebangsaan</mat-label>
+                        <mat-select (selectionChange)="onChangeKebangsaan()"
+                            [(ngModel)]="dataKebangsaan">
+                            <mat-option *ngFor="let data of listKebangsaan"
+                                [value]="data">
+                                {{data.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="ui-md-4">
+                    <mat-form-field>
+                        <mat-label>Negara</mat-label>
+                        <mat-select [(ngModel)]="selectedNegara">
+                            <mat-option *ngFor="let data of listNegara"
+                                [value]="data">
+                                {{data.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="ui-g-6">
+        <mat-card>
+            <mat-card-title>
+                <h1>Geografi</h1>
+            </mat-card-title>
+            <div class="ui-g">
+                <div class="ui-md-12">
+                    <mat-form-field style="width: 100%;">
+                        <textarea matInput placeholder="Alamat Lengkap"
+                            style="width: 100%;height: 103px"></textarea>
+                    </mat-form-field>
+                </div>
+
+                <div class="ui-md-4">
+                    <mat-form-field>
+                        <input matInput placeholder="Kode Pos">
+                    </mat-form-field>
+                </div>
+                <div class="ui-md-8">
+                    <mat-form-field style="width: 100%">
+                        <mat-label>Kelurahan</mat-label>
+                        <mat-select>
+                            <!-- <mat-option *ngFor="let data of listStatusPerkawinan" [value]="data">
+                                {{data.name}}
+                            </mat-option> -->
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="ui-md-4">
+                    <mat-form-field style="width: 100%">
+                        <mat-label>Kecamatan</mat-label>
+                        <mat-select>
+                            <!-- <mat-option *ngFor="let data of listStatusPerkawinan" [value]="data">
+                                    {{data.name}}
+                                </mat-option> -->
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="ui-md-4">
+                    <mat-form-field style="width: 100%">
+                        <mat-label>Kota Kabupaten</mat-label>
+                        <mat-select>
+                            <!-- <mat-option *ngFor="let data of listStatusPerkawinan" [value]="data">
+                                        {{data.name}}
+                                    </mat-option> -->
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="ui-md-4">
+                    <mat-form-field style="width: 100%">
+                        <mat-label>Provinsi</mat-label>
+                        <mat-select>
+                            <!-- <mat-option *ngFor="let data of listStatusPerkawinan" [value]="data">
+                                            {{data.name}}
+                                        </mat-option> -->
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </mat-card>
+    </div>
+</div>

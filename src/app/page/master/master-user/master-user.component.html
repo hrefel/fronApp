@@ -1,0 +1,42 @@
+<mat-card>
+    <mat-card-title>Master User</mat-card-title>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <form class="example-form">
+            <div class="ui-g">
+                <div class="ui-g-2">
+                    <mat-form-field>
+                        <input matInput placeholder="Nama" [formControl]="namaUser" required>
+                        <mat-error *ngIf="namaUser.invalid">You must enter a value</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="ui-g-2">
+                    <mat-form-field>
+                        <input matInput placeholder="Email" [formControl]="email" required>
+                        <mat-error *ngIf="email.invalid">You must enter a value</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="ui-g-2">
+                    <mat-form-field>
+                        <input matInput #input type="number" placeholder="Phone" maxlength="15" [formControl]="phone" required>
+                        <mat-error *ngIf="phone.invalid">You must enter a value</mat-error>
+                        <!-- <mat-error *ngIf="phone.">You must enter a value</mat-error> -->
+                        <mat-hint align="end">{{input.value?.length || 0}}/15</mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <div class="ui-g-4">
+                    <mat-form-field>
+                        <input matInput placeholder="Nama"
+                            [formControl]="namaUser"
+                            required>
+                        <mat-error *ngIf="namaUser.invalid">You must enter a
+                            value</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,77 @@
+<div class="container-login">
+    <div class="login-content">
+        <mat-card class="card-login" [@enterAnimation] *ngIf="showLogin">
+            <mat-card-title style="text-align: center">
+                <span style="color: rgb(0, 131, 166);">Login</span>
+            </mat-card-title>
+            <mat-card-content>
+                <div class="container-content">
+                    <mat-form-field [hideRequiredMarker]="false">
+                        <input matInput placeholder="Username"
+                            [formControl]="username"
+                            [(ngModel)]="usernameLogin"
+                            required>
+                        <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput 
+                            placeholder="Password"
+                            [type]="hide ? 'password' : 'text'"
+                            (keyup.enter)="login()"
+                            [(ngModel)]="passwordLogin">
+                        <button mat-icon-button 
+                            matSuffix 
+                            (click)="hide= !hide"
+                            [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="login()">Login</button>
+                <button mat-raised-button color="accent"
+                    (click)="toggleSignUp()">Sign Up</button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="card-register" [@enterAnimation] *ngIf="!showLogin">
+            <mat-card-title style="text-align: center">
+                <span style="color: rgb(0, 131, 166);">Sign up</span>
+            </mat-card-title>
+            <mat-card-content>
+                <div class="container-content">
+                    <mat-form-field>
+                        <input matInput placeholder="Nama Lengkap"
+                            [(ngModel)]="namaLengkap" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Email"
+                            [(ngModel)]="emailRegister" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Username"
+                            [(ngModel)]="usernameRegister" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter your password"
+                            [type]="hide ? 'password' : 'text'"
+                            [(ngModel)]="passwordRegister"
+                            required>
+                        <button mat-icon-button matSuffix (click)="hide= !hide"
+                            [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="signup()">Sign
+                    Up</button>
+                <button mat-raised-button color="accent"
+                    (click)="toggleSignUp()">Back</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

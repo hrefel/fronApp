@@ -1,0 +1,60 @@
+.container-login {
+    display: flex;
+    // margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
+    // width:  100vw;
+    background-image: url(../../../../assets/bg3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.login-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    width: 100%;
+}
+
+mat-card {
+    width: 30%;
+    background-color: #ffffffd8;
+    transition: background-color 1000ms linear;
+
+    &.card-login {
+        min-height: 30%;
+    }
+
+    &.card-register {
+        min-height: 40%;
+    }
+
+    & .form-login {
+        display: flex;
+        flex-direction: column;
+        min-height: 100px;
+        justify-content: center;
+    }
+
+    & mat-card-actions {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.container-content {
+    display: flex;
+    flex-direction: column;
+}
+
+// .toggle-transition {
+//     -webkit-transition: opacity .15s ease-in-out;
+//     -moz-transition: opacity .15s ease-in-out;
+//     -ms-transition: opacity .15s ease-in-out;
+//     -o-transition: opacity .15s ease-in-out;
+//     transition: background-color 1000ms linear;
+// }

@@ -1,0 +1,90 @@
+a {
+    text-decoration: none;
+}
+
+.mat-toolbar {
+    position: relative;
+}
+
+a,
+.mat-list-icon,
+.mat-icon {
+    cursor: pointer;
+    color: #2a2d33;
+}
+
+.container-header-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & .item-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: rgb(20, 216, 196);
+
+        & .header-action {
+            display: flex;
+            justify-content: space-between;
+            color: rgb(20, 216, 196);
+
+            a {
+                // color: white;
+                color: rgb(20, 216, 196);
+                font-size: 11px;
+                padding-right: 5px;
+            }
+        }
+
+        & .header-action-margin {
+            margin-right: 30px;
+        }
+    }
+}
+
+i,
+nz-avatar {
+    cursor: pointer;
+}
+
+.web-app-container,
+mat-drawer-content.mat-drawer-content.ng-star-inserted {
+    min-height: 89.8vh;
+    // padding:10px;
+}
+
+mat-toolbar {
+    background-color: #2a2d33;
+
+    h1 {
+        color: aliceblue;
+
+        a {
+            // color: rgb(255, 255, 255);
+            color: rgb(20, 216, 196);
+        }
+    }
+}
+
+.sidenav {
+    background-color: #2a2d33;
+    width: 400px;
+}
+
+.sub-menu li {
+    font-size: 12px;
+}
+
+.doc-header {
+    background-color: rgb(20, 216, 196);
+    color: #2a2d33;
+    padding-left: 20px;
+}
+
+.component-page-header {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 13px;
+}
