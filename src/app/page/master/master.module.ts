@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { PrimengModule, MaterialModule } from 'src/app';
 
-import { RegistrasiPasienComponent } from '../pelayanan/registrasi-pasien/registrasi-pasien.component';
-
-import { MasterUserComponent } from './master-user/master-user.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import * as app from './';
 
 @NgModule({
   declarations: [],
@@ -18,10 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class MasterModule { }
 
 @NgModule({
-  declarations: [MasterUserComponent],
+  declarations: [app.MasterUserComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild([{ path: "", component: MasterUserComponent }]),
+    RouterModule.forChild([{ path: "", component: app.MasterUserComponent }]),
 		...MaterialModule, ...PrimengModule, ReactiveFormsModule
   ]
 })
